@@ -1,0 +1,34 @@
+<div class="container mt-3">
+    <app-employee-meter 
+    [all]="getTotal()"
+    [rem]="getRem()"
+    [pre]="getPre()"
+    (countRadioChange)="radioChange($event)"
+    ></app-employee-meter>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Legajo</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Salario</th>
+                    <th>Formato</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let employee of listEmployee; let i=index;">
+                    <tr *ngIf="radioSelected == 'all' || radioSelected == employee.format">
+                    <td>{{i+1}}</td>
+                    <td>{{employee.surname}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.salary | currency}}</td>
+                    <td>{{employee.format}}</td>
+                  </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

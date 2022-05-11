@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-body">
+        <div class="form-check form-check-inline">
+            <input 
+            class="form-check-input" 
+            type="radio" 
+            name="format" 
+            id="all" 
+            value="all"
+            [(ngModel)]="radioSelected"
+            (change)="radioChange()"
+            >
+            <label class="form-check-label" for="all">Todos ({{all}})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input 
+            class="form-check-input" 
+            type="radio" 
+            name="format" 
+            id="rem" 
+            value="Remoto"
+            [(ngModel)]="radioSelected"
+            (change)="radioChange()"
+            >
+            <label class="form-check-label" for="rem">Remoto ({{rem}})</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input 
+            class="form-check-input" 
+            type="radio" 
+            name="format" 
+            id="pre" 
+            value="Presencial"
+            [(ngModel)]="radioSelected"
+            (change)="radioChange()"
+            >
+            <label class="form-check-label" for="pre">Presencial ({{pre}})</label>
+          </div>
+    </div>
+</div>
